@@ -2,7 +2,7 @@ import React from "react"
 import DocumentComponent from "../layout/DocumentComponent"
 import { OrdinalFrame } from "../../components"
 import { orframe_data } from "../sampledata/nyc_temp"
-import { degreeDiffFormat } from "../example_settings/orframe"
+import { degreeDiffFormat } from "../../components/ordinal-frame/example_settings/orframe"
 import ProcessViz from "./ProcessViz"
 
 const components = []
@@ -128,10 +128,10 @@ constructor(props) {
   this.state = { columnExtent: { 'January': undefined, 'February': undefined, 'March': undefined, 'April': undefined, 'May': undefined, 'June': undefined, 'July': undefined, 'August': undefined, 'September': undefined, 'October': undefined, 'November': undefined, 'December': undefined } }
 }
 
-brushing(e,c) {   
-  const columnExtent = this.state.columnExtent    
-  columnExtent[c] = e   
-  this.setState(columnExtent)   
+brushing(e,c) {
+  const columnExtent = this.state.columnExtent
+  columnExtent[c] = e
+  this.setState(columnExtent)
 }
 
 const axis = { orient: 'left', tickFormat: d => d, label: {

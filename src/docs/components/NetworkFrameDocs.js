@@ -1,9 +1,9 @@
 import React from "react"
 import DocumentComponent from "../layout/DocumentComponent"
-import { NetworkFrame } from "../../components"
+import { NetworkFrame } from "../../components/network-frame/NetworkFrame"
 import { Mark } from "semiotic-mark"
 
-import { edgeData } from "../example_settings/networkframe"
+import { edgeData } from "../../components/network-frame/example_settings/networkframe"
 import Button from "material-ui/Button"
 import Select from "material-ui/Select"
 import { MenuItem } from "material-ui/Menu"

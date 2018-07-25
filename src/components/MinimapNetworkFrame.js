@@ -1,7 +1,7 @@
 import React from "react"
 
 // components
-import NetworkFrame from "./NetworkFrame"
+import NetworkFrame from "./network-frame/NetworkFrame"
 import MiniMap from "./MiniMap"
 
 import PropTypes from "prop-types"

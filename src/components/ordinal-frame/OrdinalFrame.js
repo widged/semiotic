@@ -10,13 +10,13 @@ import { sum, max, min, extent } from "d3-array"
 
 import { arc } from "d3-shape"
 
-import { filterDefs } from "./constants/jsx"
+import { filterDefs } from "../constants/jsx"
 import {
   orFrameChangeProps,
   xyframeproptypes,
   ordinalframeproptypes,
   networkframeproptypes
-} from "./constants/frame_props"
+} from "../constants/frame_props"
 import {
   svgORRule,
   svgHighlightRule,
@@ -27,13 +27,13 @@ import {
   svgCategoryRule,
   htmlFrameHoverRule,
   htmlColumnHoverRule
-} from "./annotationRules/orframeRules"
+} from "../annotationRules/orframeRules"
 
-import Frame from "./Frame"
+import Frame from "../frame/Frame"
 
-import DownloadButton from "./DownloadButton"
+import DownloadButton from "../DownloadButton"
 
-import { orDownloadMapping } from "./downloadDataMapping"
+import { orDownloadMapping } from "../downloadDataMapping"
 
 import {
   calculateMargin,
@@ -43,28 +43,28 @@ import {
   adjustedPositionSize,
   orFrameConnectionRenderer,
   orFrameAxisGenerator
-} from "./svg/frameFunctions"
-import { pointOnArcAtAngle, renderLaidOutPieces } from "./svg/pieceDrawing"
+} from "../svg/frameFunctions"
+import { pointOnArcAtAngle, renderLaidOutPieces } from "../svg/pieceDrawing"
 import {
   clusterBarLayout,
   barLayout,
   pointLayout,
   swarmLayout,
   timelineLayout
-} from "./svg/pieceLayouts"
+} from "../svg/pieceLayouts"
 
-import { drawSummaries, renderLaidOutSummaries } from "./svg/summaryLayouts"
-import { stringToFn, stringToArrayFn } from "./data/dataFunctions"
-import { findFirstAccessorValue } from "./data/multiAccessorUtils"
+import { drawSummaries, renderLaidOutSummaries } from "../svg/summaryLayouts"
+import { stringToFn, stringToArrayFn } from "../data/dataFunctions"
+import { findFirstAccessorValue } from "../data/multiAccessorUtils"
 
-import { genericFunction } from "./untyped_utilities/functions"
+import { genericFunction } from "../untyped_utilities/functions"
 
 import type { Node } from "react"
 
 import type {
   AnnotationHandling,
   CustomHoverType
-} from "./types/annotationTypes"
+} from "../types/annotationTypes"
 
 import type {
   MarginType,
@@ -72,9 +72,9 @@ import type {
   ExtentSettingsType,
   ProjectionTypes,
   accessorType
-} from "./types/generalTypes"
+} from "../types/generalTypes"
 
-import type { AxisType } from "./types/annotationTypes"
+import type { AxisType } from "../types/annotationTypes"
 
 const xScale = scaleIdentity()
 const yScale = scaleIdentity()
@@ -409,7 +409,7 @@ class OrdinalFrame extends React.Component<Props, State> {
 
     const cwHash = oExtent.reduce(
       (p, c) => {
-        p[c] = (1 / oExtent.length) * oDomain[1]
+        p[c] = 1 / oExtent.length * oDomain[1]
         p.total += p[c]
         return p
       },
@@ -442,7 +442,7 @@ class OrdinalFrame extends React.Component<Props, State> {
       cwHash.total = 0
       oExtent.forEach((d, i) => {
         const oValue = columnValues[i]
-        const stepValue = (oValue / maxColumnValues) * (oDomain[1] - oDomain[0])
+        const stepValue = oValue / maxColumnValues * (oDomain[1] - oDomain[0])
         cwHash[d] = stepValue
         cwHash.total += stepValue
         if (i !== oExtent.length - 1) {

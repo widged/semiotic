@@ -1,4 +1,4 @@
-import OrdinalFrame from "./OrdinalFrame"
+import OrdinalFrame from "./ordinal-frame/OrdinalFrame"
 import createSparkFrame from "./SparkFrame"
 import { ordinalFrameDefaults } from "./SparkFrame"
 

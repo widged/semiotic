@@ -169,8 +169,6 @@ export const svgXYAnnotation = ({ screenCoordinates, i, d }) => {
       cy={screenCoordinates[1]}
       forceUpdate={true}
       style={inlineStyle}
-      fill="none"
-      stroke="black"
       r={5}
     />
   )

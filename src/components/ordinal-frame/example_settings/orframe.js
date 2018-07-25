@@ -1,7 +1,7 @@
 import React from "react"
 
-import { funnelize } from "../../components"
-import { orframe_data } from "../sampledata/nyc_temp"
+import { funnelize } from "../../index"
+import { orframe_data } from "../../../docs/sampledata/nyc_temp"
 
 export const degreeDiffFormat = d => `${Math.ceil(d * 100) / 100}°`
 

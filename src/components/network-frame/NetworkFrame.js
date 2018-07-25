@@ -16,16 +16,16 @@ import { scaleLinear, scaleIdentity } from "d3-scale"
 
 import { min, max } from "d3-array"
 
-import { filterDefs } from "./constants/jsx"
+import { filterDefs } from "../constants/jsx"
 
 import AnnotationLabel from "react-annotation/lib/Types/AnnotationLabel"
 
-import Frame from "./Frame"
+import Frame from "../frame/Frame"
 
-import DownloadButton from "./DownloadButton"
+import DownloadButton from "../DownloadButton"
 
-import { calculateMargin, adjustedPositionSize } from "./svg/frameFunctions"
-import { pointOnArcAtAngle } from "./svg/pieceDrawing"
+import { calculateMargin, adjustedPositionSize } from "../svg/frameFunctions"
+import { pointOnArcAtAngle } from "../svg/pieceDrawing"
 
 import {
   drawNodes,
@@ -41,14 +41,14 @@ import {
   areaLink,
   ribbonLink,
   circularAreaLink
-} from "./svg/networkDrawing"
+} from "../svg/networkDrawing"
 
-import { stringToFn } from "./data/dataFunctions"
+import { stringToFn } from "../data/dataFunctions"
 
 import {
   networkNodeDownloadMapping,
   networkEdgeDownloadMapping
-} from "./downloadDataMapping"
+} from "../downloadDataMapping"
 
 import {
   sankeyLeft,
@@ -75,7 +75,7 @@ import {
   xyframeproptypes,
   ordinalframeproptypes,
   networkframeproptypes
-} from "./constants/frame_props"
+} from "../constants/frame_props"
 
 import {
   htmlFrameHoverRule,
@@ -84,9 +84,9 @@ import {
   svgEncloseRule,
   svgRectEncloseRule,
   svgHighlightRule
-} from "./annotationRules/networkframeRules"
+} from "../annotationRules/networkframeRules"
 
-import { genericFunction } from "./untyped_utilities/functions"
+import { genericFunction } from "../untyped_utilities/functions"
 
 const emptyArray = []
 
@@ -308,9 +308,9 @@ const matrixify = ({ edgeHash, nodes, edgeWidthAccessor, nodeIDAccessor }) => {
 
 import type { Node } from "react"
 
-import type { CanvasPostProcessTypes } from "./types/generalTypes"
+import type { CanvasPostProcessTypes } from "../types/generalTypes"
 
-import type { AnnotationHandling } from "./types/annotationTypes"
+import type { AnnotationHandling } from "../types/annotationTypes"
 
 type NodeType = {
   degree: number,
@@ -1010,7 +1010,7 @@ class NetworkFrame extends React.Component<Props, State> {
         } = networkSettings
 
         const fontWeightMod = (fontWeight / 300 - 1) / 5 + 1
-        const fontWidth = (fontSize / 1.5) * fontWeightMod
+        const fontWidth = fontSize / 1.5 * fontWeightMod
 
         nodes.forEach((d, i) => {
           const calcualatedNodeSize = nodeSizeAccessor(d)
@@ -1096,8 +1096,8 @@ class NetworkFrame extends React.Component<Props, State> {
           node.fontSize = node.fontSize * sizeMod
           node.scale = 1
           node.radius = node.r = Math.max(
-            (node.textHeight / 4) * yMod,
-            (node.textWidth / 4) * xMod
+            node.textHeight / 4 * yMod,
+            node.textWidth / 4 * xMod
           )
           //      node.textHeight = projectionScaleY(node.textHeight)
           //      node.textWidth = projectionScaleY(node.textWidth)

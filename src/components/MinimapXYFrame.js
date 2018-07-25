@@ -1,7 +1,7 @@
 import React from "react"
 
 // components
-import XYFrame from "./XYFrame"
+import XYFrame from "./xy-frame/XYFrame"
 import MiniMap from "./MiniMap"
 
 import PropTypes from "prop-types"

@@ -1,13 +1,22 @@
 import React from "react"
 
-import XYFrame from "./XYFrame"
+import XYFrame from "./xy-frame/XYFrame"
 
 // components
 
 import PropTypes from "prop-types"
 
 const MiniMap = props => {
-  const { brushStart, brush, brushEnd, xBrushable, yBrushable, yBrushExtent, xBrushExtent, ...rest } = props
+  const {
+    brushStart,
+    brush,
+    brushEnd,
+    xBrushable,
+    yBrushable,
+    yBrushExtent,
+    xBrushExtent,
+    ...rest
+  } = props
   const interactivity = {
     start: brushStart,
     during: brush,

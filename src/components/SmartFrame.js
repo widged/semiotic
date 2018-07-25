@@ -1,7 +1,7 @@
 import React from "react"
 
-import XYFrame from "./XYFrame"
-import OrdinalFrame from "./OrdinalFrame"
+import XYFrame from "./xy-frame/XYFrame"
+import OrdinalFrame from "./ordinal-frame/OrdinalFrame"
 
 export default props => {
   if (props.frameType === "orFrame") {

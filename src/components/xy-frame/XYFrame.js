@@ -4,13 +4,13 @@ import React from "react"
 
 import { scaleLinear } from "d3-scale"
 
-import { axisPieces, axisLines } from "./visualizationLayerBehavior/axis"
+import { axisPieces, axisLines } from "../visualizationLayerBehavior/axis"
 
 // components
 
-import Axis from "./Axis"
-import DownloadButton from "./DownloadButton"
-import Frame from "./Frame"
+import Axis from "../Axis"
+import DownloadButton from "../DownloadButton"
+import Frame from "../frame/Frame"
 import {
   svgXYAnnotation,
   svgHighlight,
@@ -25,15 +25,15 @@ import {
   svgHorizontalPointsAnnotation,
   svgVerticalPointsAnnotation,
   htmlTooltipAnnotation
-} from "./annotationRules/xyframeRules"
+} from "../annotationRules/xyframeRules"
 
 import {
   createPoints,
   createLines,
   createAreas
-} from "./visualizationLayerBehavior/general"
+} from "../visualizationLayerBehavior/general"
 
-import { relativeY } from "./svg/lineDrawing"
+import { relativeY } from "../svg/lineDrawing"
 import AnnotationCallout from "react-annotation/lib/Types/AnnotationCallout"
 
 import {
@@ -41,34 +41,34 @@ import {
   drawMarginPath,
   adjustedPositionSize,
   objectifyType
-} from "./svg/frameFunctions"
-import { xyDownloadMapping } from "./downloadDataMapping"
+} from "../svg/frameFunctions"
+import { xyDownloadMapping } from "../downloadDataMapping"
 import {
   projectedX,
   projectedY,
   projectedYTop,
   projectedYMiddle,
   projectedYBottom
-} from "./constants/coordinateNames"
+} from "../constants/coordinateNames"
 import {
   calculateDataExtent,
   stringToFn,
   stringToArrayFn
-} from "./data/dataFunctions"
+} from "../data/dataFunctions"
 
-import { extentValue } from "./data/unflowedFunctions"
-import { findFirstAccessorValue } from "./data/multiAccessorUtils"
+import { extentValue } from "../data/unflowedFunctions"
+import { findFirstAccessorValue } from "../data/multiAccessorUtils"
 
-import { filterDefs } from "./constants/jsx"
+import { filterDefs } from "../constants/jsx"
 import {
   xyFrameChangeProps,
   xyFrameDataProps,
   xyframeproptypes,
   ordinalframeproptypes,
   networkframeproptypes
-} from "./constants/frame_props"
+} from "../constants/frame_props"
 
-import SpanOrDiv from "./SpanOrDiv"
+import SpanOrDiv from "../SpanOrDiv"
 
 import type { Node } from "React"
 
@@ -77,14 +77,14 @@ import type {
   MarginType,
   CanvasPostProcessTypes,
   accessorType
-} from "./types/generalTypes"
+} from "../types/generalTypes"
 
 import type {
   AnnotationHandling,
   CustomHoverType
-} from "./types/annotationTypes"
+} from "../types/annotationTypes"
 
-import type { AxisType } from "./types/annotationTypes"
+import type { AxisType } from "../types/annotationTypes"
 
 type Props = {
   useSpans: boolean,

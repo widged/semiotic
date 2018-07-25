@@ -1,8 +1,8 @@
 import React from "react"
 import { OrdinalFrame, XYFrame, NetworkFrame } from "../../components"
-import { testData } from "../example_settings/xyframe"
-import { funnelData } from "../example_settings/orframe"
-import { edgeData } from "../example_settings/networkframe"
+import { testData } from "../../components/xy-frame/example_settings/xyframe"
+import { funnelData } from "../../components/ordinal-frame/example_settings/orframe"
+import { edgeData } from "../../components/network-frame/example_settings/networkframe"
 
 const lineType = Math.random() < 0.5 ? "stackedarea" : "line"
 

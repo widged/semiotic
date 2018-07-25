@@ -1,4 +1,4 @@
-import NetworkFrame from "./NetworkFrame"
+import NetworkFrame from "./network-frame/NetworkFrame"
 import createSparkFrame from "./SparkFrame"
 import { networkFrameDefaults } from "./SparkFrame"
 

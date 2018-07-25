@@ -17,7 +17,7 @@ import { scaleLinear, scalePow } from "d3-scale"
 import AnnotationCalloutElbow from "react-annotation/lib/Types/AnnotationCalloutElbow"
 import AnnotationBadge from "react-annotation/lib/Types/AnnotationBadge"
 
-import { testData } from "../example_settings/xyframe"
+import { testData } from "../../components/xy-frame/example_settings/xyframe.js"
 import Button from "material-ui/Button"
 import Select from "material-ui/Select"
 import { MenuItem } from "material-ui/Menu"
@@ -398,7 +398,7 @@ components.push({
     lineDataAccessor: PropTypes.oneOfType([
       PropTypes.func,
       PropTypes.string
-    ]), //are you missing a point data accessor? 
+    ]), //are you missing a point data accessor?
     areaDataAccessor: PropTypes.oneOfType([
       PropTypes.func,
       PropTypes.string
@@ -443,7 +443,7 @@ components.push({
       // if layout is bump you can include, assumes circlular collision
       //   labelSizeFunction: PropTypes.func, defaults to 5 for circle radius
       //   pointSizeFunction: PropTypes.func, defaults to 5 for circle radius
-      // if layout is marginalia:     
+      // if layout is marginalia:
       //   orient: One of "left", "right", "nearest"
     interaction: PropTypes.object,
     download: PropTypes.bool, //add a download button for graphs data as csv
@@ -1214,7 +1214,7 @@ export default class XYFrameDocs extends React.Component {
       demo: displayFrame,
       source: removeEmptyLines`
       import { ${this.state.frame} } from 'semiotic';
-        
+
       <${this.state.frame}
       ${titleTypeLabelHash[this.state.title]}
       size={[ 700,500 ]}

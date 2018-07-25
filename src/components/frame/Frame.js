@@ -1,16 +1,16 @@
 // @flow
 
 import React from "react"
-import AnnotationLayer from "./AnnotationLayer"
-import InteractionLayer from "./InteractionLayer"
-import VisualizationLayer from "./VisualizationLayer"
-import { generateFrameTitle } from "./svg/frameFunctions"
+import AnnotationLayer from "../AnnotationLayer"
+import InteractionLayer from "../InteractionLayer"
+import VisualizationLayer from "../VisualizationLayer"
+import { generateFrameTitle } from "../svg/frameFunctions"
 import PropTypes from "prop-types"
 
-import SpanOrDiv from "./SpanOrDiv"
+import SpanOrDiv from "../SpanOrDiv"
 import type { Node } from "react"
-import type { MarginType } from "./types/generalTypes"
-import type { AxisType } from "./types/annotationTypes"
+import type { MarginType } from "../types/generalTypes"
+import type { AxisType } from "../types/annotationTypes"
 
 type Props = {
   name?: string,

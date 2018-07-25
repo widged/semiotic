@@ -2,7 +2,7 @@ import React from "react"
 import DocumentComponent from "../layout/DocumentComponent"
 import { OrdinalFrame } from "../../components"
 import { randomNormal } from "d3-random"
-import { funnelData } from "../example_settings/orframe"
+import { funnelData } from "../../components/ordinal-frame/example_settings/orframe"
 import Button from "material-ui/Button"
 import { sum } from "d3-array"
 import Select from "material-ui/Select"
@@ -131,7 +131,7 @@ components.push({
   // if layout is bump you can include, assumes circlular collision
   //   labelSizeFunction: PropTypes.func, defaults to 5 for circle radius
   //   pointSizeFunction: PropTypes.func, defaults to 5 for circle radius
-  // if layout is marginalia:     
+  // if layout is marginalia:
   //   orient: One of "left", "right", "nearest"
   //   textHeight: pixel height of label annotation text, defaults to 30
   //   textPadding: pixel padding between labels, defaults to 5
