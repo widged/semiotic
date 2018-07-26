@@ -126,6 +126,8 @@ const components = {
   customnode: { docs: CustomNodes, parent: "networkframe" },
   sunburst: { docs: Sunburst, parent: "networkframe" },
   networks: { docs: Networks, parent: "networkframe" },
+  /*
+  */
   axis: { docs: AxisDocs },
   legend: { docs: LegendDocs },
   dividedline: { docs: DividedLineDocs }

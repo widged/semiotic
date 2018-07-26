@@ -349,7 +349,7 @@ export default class ProcessViz extends React.Component {
     return (
       <div style={{ position: "relative" }}>
         <div style={{ fontSize: "40px", fontWeight: 100, margin: "10px 0" }}>
-          {this.props.frameType}
+          /* {this.props.frameType} */
         </div>
         {this.state.content && (
           <div

@@ -55,7 +55,6 @@ const DocumentComponent = props => {
           </IconButton>
         ) : null}
       </h1>
-
       {children}
       <div>
         <div style={{ width: "850px" }}>
@@ -88,6 +87,13 @@ const DocumentComponent = props => {
             ""
           )
       )}
+    </div>
+  )
+  return (
+    <div style={{ width: "750px", display: "inline-block" }}>
+      {examples.map((example, i) => (
+        <DocumentExamples key={i} component={example} />
+      ))}
     </div>
   )
 }

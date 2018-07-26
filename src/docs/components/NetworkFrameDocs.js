@@ -1,6 +1,6 @@
 import React from "react"
 import DocumentComponent from "../layout/DocumentComponent"
-import { NetworkFrame } from "../../components/network-frame/NetworkFrame"
+import { NetworkFrame } from "../../components"
 import { Mark } from "semiotic-mark"
 
 import { edgeData } from "../../components/network-frame/example_settings/networkframe"
@@ -177,7 +177,7 @@ const networkEdgeStyle = () => ({
   strokeWidth: "1px"
 })
 
-export default class NetworkFrameDocs extends React.Component {
+class NetworkFrameDocs extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -339,7 +339,7 @@ export default class NetworkFrameDocs extends React.Component {
       networkChart.annotations = annotations
     }
 
-    const examples = []
+    const examples = [{}]
     examples.push({
       name: "Basic",
       demo: (
@@ -355,7 +355,7 @@ export default class NetworkFrameDocs extends React.Component {
           >
             NetworkFrame API
           </Button>
-          <ProcessViz frameSettings={networkChart} frameType="NetworkFrame" />
+          <ProcessViz frameSettings={networkChart} frameType={NetworkFrame} />
           <NetworkFrame {...networkChart} />
         </div>
       ),
@@ -409,40 +409,41 @@ export default class NetworkFrameDocs extends React.Component {
         examples={examples}
         buttons={buttons}
       >
-        <p>
-          The NetworkFrame lets you create network diagrams like chord diagrams,
-          sankey diagrams and force-directed network diagrams.
-        </p>
-
-        <p>
-          Data are sent to the nodes and edges properties. Nodes are not
-          required (the corresponding nodes will be created based on edge data)
-          and edges are not required (if you want to make bubble charts) but you
-          do have to send one or the other.
-        </p>
-        <p>
-          Node data format:
-          <br />
+        <div>
+          <p>
+            The NetworkFrame lets you create network diagrams like chord
+            diagrams, sankey diagrams and force-directed network diagrams.
+          </p>
+          <p>
+            Data are sent to the nodes and edges properties. Nodes are not
+            required (the corresponding nodes will be created based on edge
+            data) and edges are not required (if you want to make bubble charts)
+            but you do have to send one or the other.
+          </p>
+          <p>
+            Node data format:
+            <br />
+          </p>
           <PrismCode>{`[
-  { id: "Bob" },
-  { id: "Xianlin" }
+{ id: "Bob" },
+{ id: "Xianlin" }
 ]`}</PrismCode>
-        </p>
-        <p>
-          Edge Data can be sent as an edge list:
-          <br />
-          <PrismCode>{`[
-  { source: "Bob", target: "Xianlin" },
-  { source: "Xianlin", target: "Baboo" }
+          <p>
+            Edge Data can be sent as an edge list:
+            <br />
+            <PrismCode>{`[
+{ source: "Bob", target: "Xianlin" },
+{ source: "Xianlin", target: "Baboo" }
 ]`}</PrismCode>
-          <br />
-          Or as hierarchical JSON (which can be used for hierarchical charts or
-          for sankey or force-directed networks):
-          <br />
-          <PrismCode>{`{
-  id: "root", children: [ { id: "A Child", children: [{ id: "A Grandchild" }] } ]
+            <br />
+            Or as hierarchical JSON (which can be used for hierarchical charts
+            or for sankey or force-directed networks):
+            <br />
+            <PrismCode>{`{
+id: "root", children: [ { id: "A Child", children: [{ id: "A Grandchild" }] } ]
 }`}</PrismCode>
-        </p>
+          </p>
+        </div>
       </DocumentComponent>
     )
   }
@@ -450,3 +451,5 @@ export default class NetworkFrameDocs extends React.Component {
 
 NetworkFrameDocs.title = "NetworkFrame"
 NetworkFrameDocs.icon = <Icon />
+
+export default NetworkFrameDocs
